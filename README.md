@@ -8,4 +8,4 @@ This is a sweet and interactive web page made to celebrate a special anniversary
 
 3.Set source to main branch and /root
 
-4.Visit https://coderboe.github.io/anniversary/
+4.Visit https://boelutt.github.io/myannipage/
