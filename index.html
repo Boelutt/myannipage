@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="assets/images/love.png" type="image/love.png" sizes="16x16" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Happy Anniversary" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <canvas id="fireworks"></canvas>
+
+  <div class="container">
+    <h1>💖 Happy Anniversary 💖</h1>
+    <p>To my beloved,</p>
+    <p class="message">Every moment with you is a treasure. Thank you for being my everything. Here's to many more years together.</p>
+    
+    <div class="couple-banner">
+      <!--Change the images to your own photos and change the names to your own names 
+      Example <img src="boyfriend.jpg" alt="Boyfriend" class="photo"> 
+      <img src="girlfriend.jpg" alt="Girlfriend" -->
+
+      <img src="assets/images/bf.jpg" alt="Boyfriend" class="photo" />
+      <h2 class="heart-text">❤️ Me & You ❤️</h2>
+      <img src="assets/images/gf.jpg" alt="Girlfriend" class="photo" />
+    </div>
+
+    <p id="days-counter" class="days">⏳ Loading days...</p>
+    <p id="ymd-counter">📅 Loading time passed...</p>
+    <p id="next-anniversary">🎉 Calculating next anniversary...</p>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="assets/music/music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <button id="start-btn">🎉 Start Celebration</button>
+  <button id="music-toggle" style="display: none;">🔊 Mute</button>
+  <!-- fireworks.js and music.js are in the js folder. -->
+  <script src="assets/js/fireworks.js"></script>
+  <script src="assets/js/music.js"></script>
+  <!-- GSAP latest -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
