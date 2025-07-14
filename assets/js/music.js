@@ -2,7 +2,19 @@ const music = document.getElementById("bg-music");
 const startBtn = document.getElementById("start-btn");
 const toggleBtn = document.getElementById("music-toggle");
 
+let hasStarted = false;
+
 startBtn.onclick = () => {
+  if (hasStarted) return; // Prevent double start
+  hasStarted = true;
+
+  // Add background animation
+  document.body.classList.add("bg-active");
+
+  // Start love bubbles
+  startLoveBubbles();
+
+  // Fade in music
   music.volume = 0;
   music.play().then(() => {
     let vol = 0;
@@ -15,13 +27,14 @@ startBtn.onclick = () => {
       }
     }, 200);
 
+    // Show/hide buttons
     startBtn.style.display = "none";
     toggleBtn.style.display = "inline-block";
 
     // First big firework
     createFirework(window.innerWidth / 2, window.innerHeight / 2, 'heart');
 
-    // Start auto fireworks
+    // Continuous fireworks
     setInterval(() => {
       const x = Math.random() * window.innerWidth;
       const y = Math.random() * window.innerHeight * 0.5;
@@ -29,20 +42,32 @@ startBtn.onclick = () => {
       createFirework(x, y, shape);
     }, 1500);
   }).catch(e => {
-    alert("Autoplay blocked. Please click the page first.");
+    alert("🔈 Autoplay blocked. Please click the page first.");
     console.error(e);
   });
 };
 
+// Mute toggle button
 toggleBtn.onclick = () => {
   music.muted = !music.muted;
   toggleBtn.innerText = music.muted ? "🔈 Unmute" : "🔊 Mute";
 };
 
-// Change your anniversary date here
-// Format: YYYY-MM-DD
-// Example: 2023-07-14
-// You can change the date to your own anniversary date.
+// 🎈 Love bubbles
+function startLoveBubbles() {
+  const createHeart = () => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  };
+
+  setInterval(createHeart, 300);
+}
+
+// 💕 Anniversary Date Calculation
 const startDate = new Date("2023-07-14");
 const today = new Date();
 
